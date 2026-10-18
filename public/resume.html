@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asare Kofi Aikins - CV</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, system-ui, sans-serif;
+      color: #17402A;
+      background: #FAF7F0;
+      line-height: 1.5;
+      font-size: 11pt;
+    }
+
+    .page {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 44px 52px;
+      background: #FAF7F0;
+    }
+
+    /* ═══ Header ═══ */
+    header {
+      border-bottom: 2px solid #B67E7D;
+      padding-bottom: 18px;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: 26pt;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #17402A;
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+
+    .title {
+      font-size: 11.5pt;
+      font-weight: 600;
+      color: #B67E7D;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 18px;
+      font-size: 9.5pt;
+      color: #2E6B46;
+    }
+
+    .contact span {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .contact a {
+      color: #2E6B46;
+      text-decoration: none;
+    }
+
+    /* ═══ Sections ═══ */
+    section {
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 9.5pt;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #B67E7D;
+      margin-bottom: 10px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid rgba(182, 126, 125, 0.3);
+    }
+
+    p {
+      color: #17402A;
+      font-size: 10pt;
+      margin-bottom: 6px;
+    }
+
+    /* ═══ Skills ═══ */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 5px 16px;
+      font-size: 9.5pt;
+    }
+
+    .skills-grid dt {
+      font-weight: 600;
+      color: #2E6B46;
+    }
+
+    .skills-grid dd {
+      color: #17402A;
+    }
+
+    /* ═══ Projects ═══ */
+    .project {
+      margin-bottom: 12px;
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 2px;
+    }
+
+    .project-title {
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: #17402A;
+    }
+
+    .project-year {
+      font-size: 9pt;
+      color: #B67E7D;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .project-meta {
+      font-size: 9pt;
+      color: #2E6B46;
+      margin-bottom: 4px;
+      font-style: italic;
+    }
+
+    .project-desc {
+      font-size: 9.5pt;
+      color: #17402A;
+      margin-bottom: 4px;
+    }
+
+    .project-tech {
+      font-size: 8.5pt;
+      color: #2E6B46;
+      font-weight: 500;
+    }
+
+    .project-tech strong {
+      color: #B67E7D;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    /* ═══ Experience / Education ═══ */
+    .exp-item {
+      margin-bottom: 11px;
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 2px;
+    }
+
+    .exp-role {
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: #17402A;
+    }
+
+    .exp-period {
+      font-size: 9pt;
+      color: #B67E7D;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .exp-company {
+      font-size: 9.5pt;
+      color: #2E6B46;
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+
+    .exp-desc {
+      font-size: 9.5pt;
+      color: #17402A;
+    }
+
+    /* ═══ Print ═══ */
+    @media print {
+      body { background: white; }
+      .page { padding: 28px 36px; max-width: 100%; background: white; }
+      a { color: #2E6B46 !important; }
+      section { margin-bottom: 16px; }
+      .exp-item, .project { margin-bottom: 9px; }
+      @page { margin: 0; size: A4; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- ═══ Header ═══ -->
+    <header>
+      <h1>Asare Kofi Aikins</h1>
+      <p class="title">Full-Stack Developer &amp; Educator</p>
+      <div class="contact">
+        <span>📍 Accra, Greater Accra Region, Ghana</span>
+        <span>✉️ <a href="mailto:kofiasareaikins94@gmail.com">kofiasareaikins94@gmail.com</a></span>
+        <span>📱 0557815752 / 0204904397</span>
+      </div>
+      <div class="contact" style="margin-top: 5px;">
+        <span>🔗 <a href="https://github.com/FarO-Stone-1">github.com/FarO-Stone-1</a></span>
+        <span>💼 <a href="https://www.linkedin.com/in/aikins-asare-6b5111371">linkedin.com/in/aikins-asare-6b5111371</a></span>
+        <span>𝕏 <a href="https://x.com/FaroStone">x.com/FaroStone</a></span>
+      </div>
+    </header>
+
+    <!-- ═══ Summary ═══ -->
+    <section>
+      <h2>Professional Summary</h2>
+      <p>
+        Full-stack developer with 3+ years of hands-on software development experience and
+        6+ years of teaching Mathematics, Science, and ICT across primary and secondary
+        levels. Skilled in Node.js, PHP, TypeScript, and cloud database systems, with a
+        proven ability to translate real classroom problems into production-grade software.
+        Currently building SchoolHub, a multi-tenant SaaS platform for school management.
+      </p>
+    </section>
+
+    <!-- ═══ Skills ═══ -->
+    <section>
+      <h2>Technical Skills</h2>
+      <dl class="skills-grid">
+        <dt>Frontend</dt>
+        <dd>HTML5, CSS3, JavaScript, TypeScript, React, Next.js, SvelteKit 5, Tailwind CSS</dd>
+
+        <dt>Backend</dt>
+        <dd>Node.js, Express, Hono, tRPC, PHP 8.x, RESTful APIs, Zod</dd>
+
+        <dt>Database</dt>
+        <dd>MySQL, PostgreSQL (Neon), MongoDB, Drizzle ORM</dd>
+
+        <dt>Languages</dt>
+        <dd>JavaScript, TypeScript, PHP, Python, C++, VB.NET</dd>
+
+        <dt>Security</dt>
+        <dd>Networking Fundamentals, Network Security, TCP/IP, BCrypt Hashing, RBAC</dd>
+
+        <dt>Tools</dt>
+        <dd>Git, GitHub, VS Code, Vercel, Turborepo, pnpm, Figma</dd>
+      </dl>
+    </section>
+
+    <!-- ═══ Projects ═══ -->
+    <section>
+      <h2>Selected Projects</h2>
+
+      <div class="project">
+        <div class="project-header">
+          <span class="project-title">SchoolHub - Multi-Tenant School Management SaaS</span>
+          <span class="project-year">2026</span>
+        </div>
+        <p class="project-meta">Full-Stack SaaS Platform · In Active Development</p>
+        <p class="project-desc">
+          Multi-tenant SaaS platform for schools in Ghana and beyond. Role-based access for
+          admins, teachers, students, and parents across academics, attendance, exams, fees,
+          and communication. Built from firsthand classroom experience.
+        </p>
+        <p class="project-tech"><strong>STACK:</strong> SvelteKit 5, TypeScript, Hono, tRPC, Drizzle ORM, Neon Postgres, Better Auth, Tailwind 4</p>
+      </div>
+
+      <div class="project">
+        <div class="project-header">
+          <span class="project-title">Virtual Classroom Platform</span>
+          <span class="project-year">2026</span>
+        </div>
+        <p class="project-meta">Full-Stack Web Application</p>
+        <p class="project-desc">
+          Interactive learning portal connecting students, teachers, and admins. Includes
+          coursework submissions, announcements, and a self-bootstrapping cloud database
+          architecture on Aiven MySQL over SSL.
+        </p>
+        <p class="project-tech"><strong>STACK:</strong> Node.js, Express, MySQL (Aiven Cloud), RESTful APIs, SSL</p>
+      </div>
+
+      <div class="project">
+        <div class="project-header">
+          <span class="project-title">MediCore HMS - Hospital Management System</span>
+          <span class="project-year">2025</span>
+        </div>
+        <p class="project-meta">Full-Stack Web Application</p>
+        <p class="project-desc">
+          Modern hospital management platform with Role-Based Access Control, glassmorphic UI,
+          and real-time dashboard metrics. Secured with BCrypt password hashing and MySQLi
+          prepared statements.
+        </p>
+        <p class="project-tech"><strong>STACK:</strong> PHP 8.x, MySQL, MySQLi Prepared Statements, HTML5, CSS3, JavaScript ES6+</p>
+      </div>
+
+      <div class="project">
+        <div class="project-header">
+          <span class="project-title">Very Very Boards - Order Processing Application</span>
+          <span class="project-year">2025 – 2026</span>
+        </div>
+        <p class="project-meta">Desktop Application · Academic Project</p>
+        <p class="project-desc">
+          Windows Forms order-processing system for a custom shirt and board business.
+          Menu-driven navigation with keyboard access keys, event delegation via
+          .PerformClick(), and dynamic pricing logic.
+        </p>
+        <p class="project-tech"><strong>STACK:</strong> VB.NET, .NET Windows Forms, Visual Studio</p>
+      </div>
+    </section>
+
+    <!-- ═══ Experience ═══ -->
+    <section>
+      <h2>Professional Experience</h2>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-role">Full-Stack Developer</span>
+          <span class="exp-period">3 Years · Ongoing</span>
+        </div>
+        <p class="exp-company">Self-Directed Practice</p>
+        <p class="exp-desc">
+          Building full-stack web and desktop applications across modern stacks. Currently
+          developing SchoolHub, a multi-tenant SaaS platform for school management.
+        </p>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-role">Teacher - Science &amp; Mathematics</span>
+          <span class="exp-period">2024 – 2025</span>
+        </div>
+        <p class="exp-company">Palma Christian School</p>
+        <p class="exp-desc">
+          Taught Science and Mathematics to primary and junior high students. Brought
+          classroom insight directly into every education software project I build.
+        </p>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-role">National Service Teacher - Integrated Science</span>
+          <span class="exp-period">2022 – 2023</span>
+        </div>
+        <p class="exp-company">Kwabenya Senior High &amp; Technical</p>
+        <p class="exp-desc">
+          Served my national service year as an Integrated Science teacher, delivering
+          practical science education to senior high students.
+        </p>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-role">Teacher - Science &amp; ICT</span>
+          <span class="exp-period">2015 – 2017</span>
+        </div>
+        <p class="exp-company">High Grade Montessori School</p>
+        <p class="exp-desc">
+          Taught Science and ICT to primary students. My first classroom experience, and
+          where I first saw the daily challenges that school management software could solve.
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══ Education ═══ -->
+    <section>
+      <h2>Education</h2>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-role">Diploma in Information Technology</span>
+          <span class="exp-period">2024 – 2026</span>
+        </div>
+        <p class="exp-company">Kwame Nkrumah University of Science and Technology (KNUST), Kumasi</p>
+        <p class="exp-desc">
+          Coursework in VB.NET, web development, C++, networking, and network security,
+          applied through real course projects.
+        </p>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-role">HND in Civil Engineering</span>
+          <span class="exp-period">2019 – 2022</span>
+        </div>
+        <p class="exp-company">Takoradi Technical University</p>
+        <p class="exp-desc">
+          Built a foundation in structural thinking, mathematics, and engineering discipline
+          that continues to shape my approach to software architecture.
+        </p>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>

@@ -1,69 +1,162 @@
+import { profile } from "@/lib/data";
 import Image from "next/image";
+import { Download } from "lucide-react";
+import SmoothScroll from "@/components/SmoothScroll";
+import Navbar from "@/components/Navbar";
+import About from "@/components/About";
+import Skills from "@/components/Skills";
+import Projects from "@/components/Projects";
+import Experience from "@/components/Experience";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
+import Loader from "@/components/Loader";
+import ScrollProgress from "@/components/ScrollProgress";
+import ScrollToTop from "@/components/ScrollToTop";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <SmoothScroll>
+      <Loader />
+      <ScrollProgress />
+      <ScrollToTop />
+      <Navbar />
+
+      <main className="min-h-screen flex items-center justify-center px-6 py-24 relative overflow-hidden">
+
+        {/* ── Ambient Background Orbs ── */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div
+            className="orb anim-drift"
+            style={{
+              width: 400,
+              height: 400,
+              background: "#B67E7D",
+              top: "10%",
+              left: "5%",
+            }}
+          />
+          <div
+            className="orb anim-drift"
+            style={{
+              width: 500,
+              height: 500,
+              background: "#5DA87A",
+              bottom: "5%",
+              right: "0%",
+              animationDelay: "-8s",
+              opacity: 0.3,
+            }}
+          />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
+
+        <div className="text-center max-w-3xl mx-auto relative z-10">
+
+          {/* ── Profile Photo ── */}
+          <div className="anim-scale-in relative inline-block mb-10">
+            <span
+              className="absolute inset-0 rounded-full border-2 pointer-events-none"
+              style={{
+                borderColor: "#B67E7D",
+                animation: "ringPulse 2.5s ease-out infinite",
+              }}
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+            <div
+              className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden anim-float"
+              style={{
+                border: "3px solid #5DA87A",
+                boxShadow: "0 20px 60px -15px rgba(23, 64, 42, 0.4)",
+                background: "#EFEAD9",
+              }}
+            >
+              <Image
+                src="/profile.jpg"
+                alt={profile.name}
+                fill
+                priority
+                className="object-cover"
+              />
+            </div>
+          </div>
+
+          {/* ── Title ── */}
+          <p className="anim-fade-up delay-200 text-[#B67E7D] text-sm md:text-base font-semibold tracking-[0.3em] uppercase mb-5">
+            {profile.title}
+          </p>
+
+          {/* ── Name ── */}
+          <h1 className="anim-fade-up delay-300 text-5xl md:text-7xl font-bold tracking-tight text-[#17402A] leading-[1.05]">
+            {profile.name}
+          </h1>
+
+          {/* ── Divider ── */}
+          <div
+            className="anim-fade-in delay-500 h-px w-20 mx-auto my-8"
+            style={{ background: "#B67E7D" }}
+          />
+
+          {/* ── Tagline ── */}
+          <p className="anim-fade-up delay-600 text-[#17402A] text-lg md:text-xl max-w-xl mx-auto leading-relaxed font-medium">
+            {profile.tagline}
+          </p>
+
+          {/* ── CTAs ── */}
+          <div className="anim-fade-up delay-700 mt-12 flex flex-wrap gap-4 justify-center">
+
+            {/* View My Work */}
+            <a
+              href="#projects"
+              className="hover-lift inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium text-[#FAF7F0] transition-all"
+              style={{ background: "#17402A" }}
+            >
+              View My Work
+            </a>
+
+            {/* Download CV */}
+            <a
+              href="/resume.pdf"
+              download
+              className="hover-lift inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium border-2 transition-all"
+              style={{
+                borderColor: "#B67E7D",
+                color: "#B67E7D",
+                background: "transparent",
+              }}
+            >
+              <Download size={16} />
+              Download CV
+            </a>
+
+            {/* Hire Me */}
+            <a
+              href={profile.contact.callWhatsApp.href}
+              target="_blank"
+              rel="noreferrer"
+              className="hover-lift inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium border-2 transition-all"
+              style={{
+                borderColor: "#17402A",
+                color: "#17402A",
+                background: "transparent",
+              }}
+            >
+              Hire Me
+            </a>
+
+          </div>
+
         </div>
       </main>
-    </div>
+
+      {/* ── Sections ── */}
+      <About />
+      <Skills />
+      <Projects />
+      <Experience />
+      <Contact />
+
+      {/* ── Footer ── */}
+      <Footer />
+
+    </SmoothScroll>
   );
 }

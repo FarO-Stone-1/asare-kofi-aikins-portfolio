@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5DA87A"/>
+      <stop offset="100%" stop-color="#2E6B46"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#grad)"/>
+  <text
+    x="50%"
+    y="50%"
+    font-family="Georgia, serif"
+    font-size="140"
+    font-weight="bold"
+    fill="#FAF7F0"
+    text-anchor="middle"
+    dominant-baseline="central"
+  >
+    KA
+  </text>
+</svg>
