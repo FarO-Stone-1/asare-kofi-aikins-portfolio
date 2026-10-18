@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt, FaClock } from "react-icons/fa";
 
@@ -30,9 +30,18 @@ export default function ProjectCard({
 }) {
   const ref = useRef<HTMLElement>(null);
   const [rotate, setRotate] = useState({ x: 0, y: 0 });
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect if the user is on a mobile device
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
-    if (!ref.current) return;
+    if (!ref.current || isMobile) return;
     const rect = ref.current.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
@@ -60,16 +69,16 @@ export default function ProjectCard({
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{
-        transform: `perspective(1000px) rotateX(${rotate.x}deg) rotateY(${rotate.y}deg)`,
+        transform: isMobile ? "none" : `perspective(1000px) rotateX(${rotate.x}deg) rotateY(${rotate.y}deg)`,
         transformStyle: "preserve-3d",
         transition: "transform 0.15s ease-out",
-        background: "rgba(250, 247, 240, 0.12)",
-        backdropFilter: "blur(16px)",
-        WebkitBackdropFilter: "blur(16px)",
-        border: "1px solid rgba(250, 247, 240, 0.2)",
-        boxShadow: "0 20px 60px -30px rgba(0, 0, 0, 0.4)",
+        
+        /* THE FIX: Solid dark background so text pops on mobile */
+        background: "#17402A", 
+        border: "1px solid rgba(250, 247, 240, 0.15)",
+        boxShadow: "0 20px 40px -20px rgba(0, 0, 0, 0.5)",
       }}
-      className="rounded-3xl p-8 md:p-10"
+      className="rounded-3xl p-6 md:p-10"
     >
 
       {/* ── Header Row ── */}
@@ -94,7 +103,7 @@ export default function ProjectCard({
             <span
               className="text-xs px-3 py-1 rounded-full font-semibold uppercase tracking-wider"
               style={{
-                background: "rgba(182, 126, 125, 0.25)",
+                background: "rgba(182, 126, 125, 0.35)",
                 color: "#FAF7F0",
                 border: "1px solid #B67E7D",
               }}
@@ -106,9 +115,9 @@ export default function ProjectCard({
             <span
               className="inline-flex items-center gap-1.5 text-xs px-3 py-1 rounded-full font-semibold uppercase tracking-wider"
               style={{
-                background: "rgba(250, 200, 100, 0.2)",
+                background: "rgba(250, 200, 100, 0.25)",
                 color: "#FAF7F0",
-                border: "1px solid rgba(250, 200, 100, 0.6)",
+                border: "1px solid rgba(250, 200, 100, 0.8)",
                 animation: "ringPulse 3s ease-out infinite",
               }}
             >
@@ -120,7 +129,7 @@ export default function ProjectCard({
       </div>
 
       {/* ── Description ── */}
-      <p className="text-[#EFEAD9] leading-relaxed mb-6 text-base">
+      <p className="text-[#F5F1E8] leading-relaxed mb-6 text-base">
         {p.description}
       </p>
 
@@ -133,9 +142,9 @@ export default function ProjectCard({
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.4, delay: 0.2 + idx * 0.05 }}
-            className="text-sm text-[#D4CEC0] flex gap-2 leading-relaxed"
+            className="text-sm text-[#F5F1E8] flex gap-2 leading-relaxed"
           >
-            <span className="text-[#B67E7D] mt-1 flex-shrink-0">▸</span>
+            <span className="text-[#B67E7D] mt-1 flex-shrink-0 font-bold">▸</span>
             <span>{h}</span>
           </motion.li>
         ))}
@@ -150,9 +159,9 @@ export default function ProjectCard({
             transition={{ duration: 0.2 }}
             className="text-xs px-3 py-1.5 rounded-full font-medium cursor-default"
             style={{
-              background: "rgba(93, 168, 122, 0.25)",
+              background: "rgba(93, 168, 122, 0.3)",
               color: "#FAF7F0",
-              border: "1px solid rgba(93, 168, 122, 0.5)",
+              border: "1px solid rgba(93, 168, 122, 0.6)",
             }}
           >
             {t}
@@ -169,9 +178,9 @@ export default function ProjectCard({
             rel="noreferrer"
             className="hover-lift inline-flex items-center gap-2 text-sm px-5 py-2.5 rounded-full font-medium transition-colors"
             style={{
-              background: "rgba(250, 247, 240, 0.1)",
+              background: "rgba(250, 247, 240, 0.15)",
               color: "#FAF7F0",
-              border: "1px solid rgba(250, 247, 240, 0.3)",
+              border: "1px solid rgba(250, 247, 240, 0.4)",
             }}
           >
             <FaGithub size={14} />
